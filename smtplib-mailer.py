@@ -12,9 +12,8 @@ with open('names.csv', 'r') as csv_file:
 
 #context manager for connection handling
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-  
   smtp.login(config['login'], config['password'])
-
+  
   for tuple in msg_tuples:
     msg = EmailMessage()
     msg['From'] = config['login']
