@@ -7,8 +7,7 @@
 6. Next improvements
 
 ## 1. Description
-Small program resulting from a coding challenge: 
-> “Please write a program in your prefered language that will send out emails to recipients from a huge list (1 Mio entries) in a performant way. You do not need to send real emails but just fake the email sending by waiting for half a second.”
+Small program to supplement some emailing work.
 
 This program takes a csv its lines representing tuples (email, subject, msg) and sends all emails. This makes quick editing with sheets with the option of using individual subjects and message bodies for each recipient. Analogously broadcasting the same message is possible. SSL/TLS is used for encryption.
 
