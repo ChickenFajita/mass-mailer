@@ -1,17 +1,11 @@
 import smtplib
 import csv
 import os
+from config import config
 from email.message import EmailMessage
 
-config = {
-    'login': 'thom.huynh06@gmail.com',
-    'password': '',
-    'subject': 'Want food?',
-    'body' : 'Hello, lets have dinner tonight!',
-}
-
 contacts = []
-#receiver context manager
+#context manager
 with open('names.csv', 'r') as csv_file:
   csv_reader = csv.reader(csv_file)
   for line in csv_reader:
@@ -21,10 +15,11 @@ msg = EmailMessage()
 msg['Subject'] = config['subject']
 msg['From'] = config['login']
 msg['To'] = ', '.join(contacts)
-print(msg['To'])
 msg.set_content(config['body'])
 
-#context manager for connection
+#context manager for connection handling
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+  
   smtp.login(config['login'], config['password'])
   smtp.send_message(msg)
+  print("Emails sent!")
