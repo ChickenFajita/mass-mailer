@@ -15,10 +15,13 @@ Authorization Code flow using OAuth2, which gains access to the resource with a 
 
 Using Gmail API and OAuth is beneficial since storing username and password will not be needed. Also there won't be the need to allow access for less secure apps on your gmail account. Gmail API with OAuth will allow you to only request the scope of access you need, while smtp gives full access.
 I initially implemented the smtplib alternative, but was planning to implement authentication via OAuth2. Unfortunately I was not able to proceed, because I need to setup a OAuth consent screen.
-As of now I can not choose the interal user type, because one needs to be a G Suite user, which requires your own domain. Going the route as an external user I will have to wait for authentication which can take 4-6 weeks.
-
+As of now I can not choose the interal user type, because one needs to be a G Suite user, which requires your own domain. Going the route as an external user I will have to wait for authentication which can take 4-6 weeks
+.
+![workflow](https://miro.medium.com/max/1400/0*IsGZosgvxFHqNJYA.)
 ![Image of OAuth2 Authorization Workflow]
-(0_IsGZosgvxFHqNJYA.png) https://miro.medium.com/max/1400/0*IsGZosgvxFHqNJYA. [src](https://miro.medium.com/max/1400/0*IsGZosgvxFHqNJYA.)
+(0_IsGZosgvxFHqNJYA.png) 
+
+https://miro.medium.com/max/1400/0*IsGZosgvxFHqNJYA.
 
 # 2. Technologies
 Project is created with:
