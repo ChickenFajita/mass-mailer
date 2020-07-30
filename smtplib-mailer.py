@@ -19,7 +19,6 @@ msg.set_content(config['body'])
 
 #context manager for connection handling
 with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-  
   smtp.login(config['login'], config['password'])
   smtp.send_message(msg)
   print("Emails sent!")
