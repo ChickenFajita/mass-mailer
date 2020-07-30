@@ -30,9 +30,10 @@ Project is created with:
 2. allow access to your google account for less secure apps [lesssecureapps](https://myaccount.google.com/lessecureapps)
 
 # 4. Run
-1. clone repo with `git clone https://github.com/ChickenFajita/mass-mailer.git`
-2. open config.py and enter your login data as well as subject and body of the message you are going to broadcast
-3. 
+1. open terminal
+2. clone repo with `git clone https://github.com/ChickenFajita/mass-mailer.git`
+3. open the folder with your preferred editor or IDE, edit config.py and enter your login data as well as subject and body of the message you are going to broadcast
+4. execute the smtplib-mailer.py
 
 # 5. Performance
 
