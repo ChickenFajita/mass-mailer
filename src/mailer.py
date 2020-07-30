@@ -1,24 +1,30 @@
 import smtplib
+import csv
+import os
 from email.message import EmailMessage
 
 config = {
-    'from': 'thom.huynh06@gmail.com',
+    'login': 'thom.huynh06@gmail.com',
+    'password': '',
     'subject': 'Want food?',
     'body' : 'Hello, lets have dinner tonight!',
-    'to': 'thom_huynh98@gmx.de',
-    'server': 'smtp.gmail.com',
-    'port': '587',
-    'password': '',
-} # TODO: use config or environment variables
+}
+
+contacts = []
+#receiver context manager
+with open('names.csv', 'r') as csv_file:
+  csv_reader = csv.reader(csv_file)
+  for line in csv_reader:
+    contacts.append(line[0])
 
 msg = EmailMessage()
 msg['Subject'] = config['subject']
-msg['From'] = config['from']
-msg['To'] = config['to']
+msg['From'] = config['login']
+msg['To'] = ', '.join(contacts)
+print(msg['To'])
 msg.set_content(config['body'])
 
-#context manager
-with smtplib.SMTP(config['server'], config['port']) as smtp:
-  smtp.starttls()
-  smtp.login(config['from'], config['password'])
+#context manager for connection
+with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+  smtp.login(config['login'], config['password'])
   smtp.send_message(msg)
